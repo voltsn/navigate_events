@@ -15,11 +15,7 @@ const randomNumber = (min, max) => {
 }
 
 const randomColor = () => {
-  const red = randomNumber(0, 255);
-  const green = randomNumber(0, 255);
-  const blue = randomNumber(0, 255);
-
-  return `rgb(${red}, ${green}, ${blue})`;
+  return `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`;
 }
 
 const clickOnSquare = (e) => {
@@ -30,10 +26,9 @@ const clickOnSquare = (e) => {
   square.classList.add('displayedsquare', color);
   wrapper.appendChild(square);
 
-  // Log the action that was done
+  // Log the action that was done.
   const listItem = document.createElement('li');
-  let log = `[${getElapsedTime()}] Created a new ${e.target.classList[1]} square`;
-  listItem.innerText = log;
+  listItem.innerText = `[${getElapsedTime()}] Created a new ${e.target.classList[1]} square`;
   document.querySelector('ul').appendChild(listItem);
 
   // Alert user with the color of the square.
